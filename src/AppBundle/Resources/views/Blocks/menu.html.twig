@@ -1,0 +1,40 @@
+{% block menu %}
+    <div class="nav-collapse collapse navbar-collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav text-uppercase">
+            <li class="dropdown dropdown-fw {% if 'homepage_global' == currentRequest._route %}active open selected {% endif %}">
+                <a href="javascript:;">
+                    Global
+                </a>
+                <ul class="dropdown-menu dropdown-menu-fw">
+                    <li class="{% if 'homepage_global' == currentRequest._route %}active open selected {% endif %}"><a href="{{ path('homepage_global') }}">Global</a></li>
+                    <li><a href="inner.html">Ingresos</a></li>
+                    <li><a href="inner.html">Gastos</a></li>
+                    <li><a href="inner.html">Previsión</a></li>
+                </ul>
+            </li>
+            {% for source in sources %}
+            <li class="{% if 'source_global' == currentRequest._route and currentRequest.source is defined and currentRequest.source.slug == source.slug %}active open selected {% endif %} dropdown dropdown-fw">
+                <a href="javascript:;">
+                    {{ source.name }}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-fw">
+                    <li class="{% if 'source_global' == currentRequest._route  and currentRequest.source.slug == source.slug %}active selected{% endif %}"><a href="{{ path('source_global', {'slug': source.slug}) }}">Global</a></li>
+                    <li><a href="inner.html">Ingresos</a></li>
+                    <li><a href="inner.html">Gastos</a></li>
+                    <li><a href="inner.html">Previsión</a></li>
+                </ul>
+            </li>
+            {% endfor %}
+            <li class="{% if 'sources' == currentRequest._route or 'tags' == currentRequest._route %}active open selected {% endif %}dropdown dropdown-fw">
+                <a href="javascript:;">
+                    Configurar
+                </a>
+                <ul class="dropdown-menu dropdown-menu-fw">
+                    <li class="{% if 'sources' == currentRequest._route %}active{% endif %}"><a href="{{ path('sources') }}">Origenes</a></li>
+                    <li class="{% if 'tags' == currentRequest._route %}active{% endif %}"><a href="{{ path('tags') }}">Etiquetas</a></li>
+                    <li><a href="javascript:;">FAQ</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

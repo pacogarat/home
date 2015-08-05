@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset("bundles/app/components/jquery/dist/jquery.min.js") }}"></script>
+    <script src="{{ asset("bundles/app/components/angular/angular.min.js") }}"></script>
+    <script src="{{ asset("bundles/app/components/angular-bootstrap/ui-bootstrap.min.js") }}"></script>
+    <script src="{{ asset("bundles/app/components/angular-bootstrap/ui-bootstrap-tpls.min.js") }}"></script>
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/app/components/angular-bootstrap/ui-bootstrap-csp.css') }}" />
+{% endblock %}

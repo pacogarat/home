@@ -1,0 +1,44 @@
+{% extends("AppBundle::base.html.twig") %}
+{% block ngController %}SourceController{% endblock %}
+{% block page_content %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-red-sunglo">
+                    <span class="caption-subject bold uppercase"> Nuevo origen</span>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form role="form">
+                    <div class="form-body">
+                        <div class="form-group form-md-line-input">
+                            <input type="text" class="form-control" id="source_name" data-ng-model="new_source" placeholder="Escribe aquí el nombre de la nuevo origen">
+                            <label for="source_name">Nombre de origen</label>
+                        </div>
+                    </div>
+                    <div class="form-actions noborder">
+                        <button type="button" class="btn blue" data-ng-click="newSource(new_source)">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-red-sunglo">
+                    <span class="caption-subject bold uppercase font-blue-hoki"> Listado de orígenes</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <ul class="list-group">
+                    <li data-ng-repeat="source in sources | orderBy:'name'" class="list-group-item">
+                        <a id="{[{ source.id }]}">{[{ source.name | uppercase }]}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

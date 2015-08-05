@@ -1,0 +1,138 @@
+{% extends("AppBundle::base.html.twig") %}
+{% block ngController %}SourceController{% endblock %}
+{% block page_content %}
+    <div ng-init="initGlobal({{ source.id }})" class="row">
+        <h1 class="col-md-12">Situación global - {[{ source.name | uppercase }]}</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="dashboard-stat blue">
+                <div class="visual">
+                    <i class="fa fa-comments"></i>
+                </div>
+                <div class="details">
+                    <div class="number">
+                        {[{ source.amount }]} €
+                    </div>
+                    <div class="desc">
+                        SALDO
+                    </div>
+                </div>
+                <a class="more" href="javascript:;">
+                    {[{ source.name }]} saldo <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="dashboard-stat blue">
+                <div class="visual">
+                    <i class="fa fa-comments"></i>
+                </div>
+                <div class="details">
+                    <div class="number">
+                        {[{ source.ingresos | sum }]} €
+                    </div>
+                    <div class="desc">
+                        INGRESOS
+                    </div>
+                </div>
+                <a class="more" href="javascript:;">
+                    {{ source.name ~ ' ingresos'}} <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="dashboard-stat blue">
+                <div class="visual">
+                    <i class="fa fa-comments"></i>
+                </div>
+                <div class="details">
+                    <div class="number">
+                        {[{ source.gastos | sum }]} €
+                    </div>
+                    <div class="desc">
+                        GASTOS
+                    </div>
+                </div>
+                <a class="more" href="javascript:;">
+                    {{ source.name ~ ' gastos'}} <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption font-red-sunglo">
+                        <span class="caption-subject bold uppercase"> Añadir movimiento</span>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <form ng-submit="newMovement()" role="form">
+                        <div class="form-group form-md-line-input">
+                            <div class="form-body">
+                                <div style="display: block; margin: auto; width: 200px;" class="md-radio-inline">
+                                    <div class="md-radio">
+                                        <input type="radio" id="radio53" name="radio2" class="md-radiobtn">
+                                        <label for="radio53">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>
+                                            Ingreso </label>
+                                    </div>
+                                    <div class="md-radio has-error">
+                                        <input data-ng-model="isGasto" type="radio" id="radio54" name="radio2" class="md-radiobtn" checked="">
+                                        <label for="radio54">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>
+                                            Gasto </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <input type="text" data-ng-model="movement_amount" class="form-control" id="form_control_1" placeholder="Escribe aquí la cantidad del ingreso/gasto">
+                                <label for="form_control_1">Cantidad</label>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <select data-ng-model="selected_tags" id="concept_movement" class="form-control select2 select2-offscreen" multiple="multiple" tabindex="-1">
+                                    {% for tag in tags %}
+                                    <option value="{{ tag.id }}">{{ tag.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label class="control-label" for="concept_movement">Etiquetas</label>
+                            </div>
+                        </div>
+                        <div class="form-actions noborder">
+                            <button type="submit" class="btn blue">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption font-red-sunglo">
+                        <span class="caption-subject bold uppercase"> Ajustar saldo</span>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <form ng-submit="ajusteSaldo()" role="form">
+                        <div class="form-body">
+                            <div class="form-group form-md-line-input">
+                                <input type="number" step="0.01" data-ng-model="amount" class="form-control" id="form_control_1" placeholder="Escribe aquí el saldo actual">
+                                <label for="form_control_1">Saldo</label>
+                                <span class="help-block">Se le asignará una etiqueta de 'ajuste de saldo'</span>
+                            </div>
+                        </div>
+                        <div class="form-actions noborder">
+                            <button type="sumbit" class="btn blue">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

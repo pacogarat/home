@@ -1,0 +1,64 @@
+{% extends("AppBundle::base.html.twig") %}
+{% block page_content %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-red-sunglo">
+                    <span class="caption-subject bold uppercase"> Nueva etiqueta</span>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form role="form">
+                    <div class="form-body">
+                        <div class="form-group form-md-line-input">
+                            <input type="text" data-ng-model="new_tag" class="form-control" id="form_control_1" placeholder="Escribe aquí el nombre de la nueva etiqueta">
+                            <label for="form_control_1">Nombre de etiqueta</label>
+                        </div>
+                    </div>
+                    <div class="form-actions noborder">
+                        <button data-ng-click="newTag(new_tag)" type="button" class="btn blue">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-red-sunglo">
+                    <span class="caption-subject bold uppercase font-blue-hoki"> Listado de etiquetas</span>
+                </div>
+                <div class="actions">
+                    <div class="portlet-input input-inline input-medium">
+                        <div class="input-group">
+                            <input type="text" data-ng-model="search" class="form-control input-circle" placeholder="buscar...">
+					  </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div>
+                    <div class="slimScroll">
+                        <ul class="list-group">
+                            <li data-ng-repeat="tag in tags | filter:search | orderBy:'name'" class="list-group-item">
+                                <a>{[{ tag.name | uppercase }]}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+    <script>
+        $('.slimScroll').slimScroll({
+            height: '168px',
+            railVisible: true,
+            alwaysVisible: true
+        });
+    </script>
+{% endblock %}
