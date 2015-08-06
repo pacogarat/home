@@ -92,6 +92,7 @@ class SourceController extends Controller
             if (!empty($name)) {
                 $source = new Source();
                 $source->setName($name);
+                $source->setAmount(0);
                 $this->getDoctrine()->getManager()->persist($source);
                 $this->getDoctrine()->getManager()->flush();
                 return new JsonResponse([
