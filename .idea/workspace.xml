@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="718099a5-e319-4857-8343-b07b9c7d6bec" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Source/global.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Source/global.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/public/angular_app/module.js" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/public/angular_app/module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="718099a5-e319-4857-8343-b07b9c7d6bec" name="Default" comment="" />
     <ignored path="hogar.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -48,7 +42,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-27.5" vertical-offset="1005" max-vertical-offset="2340">
               <caret line="111" column="41" selection-start-line="111" selection-start-column="41" selection-end-line="111" selection-end-column="41" />
-              <folding />
+              <folding>
+                <element signature="e#12#37#0#Twig" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -190,7 +186,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1969" />
+    <option name="x" value="49" />
     <option name="y" value="-3" />
     <option name="width" value="1871" />
     <option name="height" value="1083" />
@@ -592,7 +588,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1969" y="-3" width="1871" height="1083" extended-state="6" />
+    <frame x="49" y="-3" width="1871" height="1083" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1021,7 +1017,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-27.5" vertical-offset="1005" max-vertical-offset="2340">
           <caret line="111" column="41" selection-start-line="111" selection-start-column="41" selection-end-line="111" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="e#12#37#0#Twig" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
