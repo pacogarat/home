@@ -1,4 +1,4 @@
-angular.module('filters',[]).filter('sum', function() {
+angular.module('filters',["ui.bootstrap"]).filter('sum', function() {
     return function(input) {
         result = 0;
         if (typeof input == 'undefined') return 0;
@@ -74,6 +74,8 @@ app.controller("SourceController", ['$scope', 'Movement', 'AjusteSaldo', 'Source
     $scope.initGlobal = function(id) {
         $scope.source = Source.get({ 'id': id });
     }
+
+    $("#date_movement").datepicker();
 
     $scope.newSource = function(new_source) {
     var source = new Source.save( $.param({ 'name' : new_source}),

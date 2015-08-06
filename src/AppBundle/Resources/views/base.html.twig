@@ -32,6 +32,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="{{ asset('bundles/app/global/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('bundles/app/global/plugins/uniform/css/uniform.default.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('bundles/app/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('bundles/app/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('bundles/app/global/plugins/bootstrap-toastr/toastr.min.css') }}" rel="stylesheet" type="text/css"/>
         <!-- END GLOBAL MANDATORY STYLES -->
         <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
@@ -47,6 +48,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="{{ asset('bundles/app/admin/layout5/css/layout.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('bundles/app/admin/layout5/css/custom.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('bundles/app/global/plugins/select2/select2.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('bundles/app/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('bundles/app/css/base.css') }}" rel="stylesheet" type="text/css"/>
         <!-- END THEME STYLES -->
         <link rel="shortcut icon" href="{{ asset('bundles/app/favicon.ico') }}"/>
@@ -623,12 +625,16 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{ asset('bundles/app/global/plugins/bootstrap-toastr/toastr.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/app/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/app/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('bundles/app/global/scripts/metronic.js') }}" type="text/javascript"></script>
 <script src="{{ asset('bundles/app/admin/layout5/scripts/layout.js') }}" type="text/javascript"></script>
 <script src="{{ asset('bundles/app/admin/layout5/scripts/quick-sidebar.js') }}" type="text/javascript"></script>
 <script src="{{ asset('bundles/app/admin/layout5/scripts/index.js') }}" type="text/javascript"></script>
 <script src="{{ asset('bundles/app/admin/pages/scripts/tasks.js') }}" type="text/javascript"></script>
 <script src="{{ asset('bundles/app/components/angular/angular.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/app/components/angular-bootstrap/ui-bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/app/components/angular-bootstrap/ui-bootstrap-tpls.js') }}" type="text/javascript"></script>
 <script src="{{ asset('bundles/app/components/angular-resource/angular-resource.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('bundles/app/angular_app/module.js') }}" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->

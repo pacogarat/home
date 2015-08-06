@@ -71,23 +71,32 @@
                 <div class="portlet-body form">
                     <form ng-submit="newMovement()" role="form">
                         <div class="form-group form-md-line-input">
-                            <div class="form-body">
-                                <div style="display: block; margin: auto; width: 200px;" class="md-radio-inline">
-                                    <div class="md-radio">
-                                        <input type="radio" id="radio53" name="radio2" class="md-radiobtn">
-                                        <label for="radio53">
-                                            <span></span>
-                                            <span class="check"></span>
-                                            <span class="box"></span>
-                                            Ingreso </label>
-                                    </div>
-                                    <div class="md-radio has-error">
-                                        <input data-ng-model="isGasto" type="radio" id="radio54" name="radio2" class="md-radiobtn" checked="">
-                                        <label for="radio54">
-                                            <span></span>
-                                            <span class="check"></span>
-                                            <span class="box"></span>
-                                            Gasto </label>
+                            <div class="alert alert-block alert-warning fade in">
+                                <h4 class="alert-heading">Tipo de movimiento</h4>
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="md-radio-inline col-md-7">
+                                            <div class="md-radio">
+                                                <input type="radio" id="radio53" name="radio2" class="md-radiobtn">
+                                                <label for="radio53">
+                                                    <span></span>
+                                                    <span class="check"></span>
+                                                    <span class="box"></span>
+                                                    Ingreso </label>
+                                            </div>
+                                            <div class="md-radio has-error">
+                                                <input data-ng-model="isGasto" type="radio" id="radio54" name="radio2" class="md-radiobtn" checked="">
+                                                <label for="radio54">
+                                                    <span></span>
+                                                    <span class="check"></span>
+                                                    <span class="box"></span>
+                                                    Gasto </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="checkbox" data-ng-model="execute" data-on-text="Ejecución" data-off-text="Informativo" class="make-switch" checked="" data-on-color="primary" data-off-color="warning">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -103,9 +112,13 @@
                                 </select>
                                 <label class="control-label" for="concept_movement">Etiquetas</label>
                             </div>
-                        </div>
-                        <div class="form-actions noborder">
-                            <button type="submit" class="btn blue">Enviar</button>
+                            <div class="form-group form-md-line-input">
+                                <label class="control-label col-md-6" for="date_movement">Fecha del movimiento</label>
+                                <datepicker ng-model="dt" show-weeks="true" class="" custom-class="getDayClass(date, mode)"></datepicker>
+                            </div>
+                            <div class="form-actions noborder">
+                                <button type="submit" class="btn blue">Enviar</button>
+                            </div>
                         </div>
                     </form>
                 </div>
